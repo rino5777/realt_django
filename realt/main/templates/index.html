@@ -1,0 +1,437 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="bootstrap 5 based real estate template">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Text&display=swap" rel="stylesheet">
+	
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/font-awesome/css/all.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/tiny-slider/tiny-slider.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/glightbox/css/glightbox.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/choices/css/choices.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/nouislider/nouislider.css' %}">
+	<!--  -->
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+{% block Sidebar  %}
+<!-- =======================
+Sidebar START -->
+	<div class="offcanvas offcanvas-end" data-bs-scroll="false" tabindex="-1" id="offcanvasMenu" aria-modal="true" role="dialog">
+		<div class="offcanvas-header justify-content-end">
+			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+		<div class="offcanvas-body d-flex flex-column pt-0 px-4">
+			<div>
+				<img src="static/images/logo.svg" class="mt-2	" alt="logo">
+				<p class="pt-3">Points afraid but may end law lasted. Was out laughter raptures returned outweigh.</p>
+				<!-- Nav START -->
+				<ul class="nav d-block flex-column my-4">
+					<li class="nav-item text-primary-hover">
+						<a class="nav-link text-dark h4 active" href="index.html">Home</a>
+					</li>
+					<li class="nav-item text-primary-hover">
+						<a class="nav-link text-dark h4" href="about.html">About</a>
+					</li>
+					<li class="nav-item text-primary-hover">
+						<a class="nav-link text-dark h4" href="services.html">Service</a>
+					</li>
+					<li class="nav-item text-primary-hover">
+						<a class="nav-link text-dark h4" href="contact-us.html">Contact Us</a>
+					</li>
+					<li class="nav-item text-primary-hover">
+						<a class="nav-link text-dark h4" href="faq.html">Faqs</a>
+					</li>
+				</ul>
+			</div>
+			<!-- Newslatter -->
+			<div class="row m-2">
+				<div class="col-12 bg-light p-4 p-sm-5 rounded text-center">
+					<div class="row justify-content-between align-items-center">
+						<!-- Title -->
+						<h4>Subscribe today!</h4>
+						<p>Stay up to date with our latest news and product</p>
+						<!-- Content and input -->
+						<form>
+							<div class="input-group">
+								<input class="form-control bg-white border-1" type="email" name="Newsletter" placeholder="Enter your email address">
+								<button type="button" class="btn btn-primary mb-0">Subscribe</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- Info -->
+			<div class="mt-auto pb-3 text-center">
+				<!-- Address -->
+				<p class="text-body mb-2 fw-bold">New York, USA (HQ)</p>
+				<address class="mb-0">750 Sing Sing Rd, Horseheads, NY, 14845</address>
+				<p class="mb-2">Call: <a href="#" class="text-body">123-456-8780</a> </p>
+				<a href="#" class="text-body d-block">example@gmail.com</a>
+				<!-- Social media button -->
+				<ul class="list-unstyled list-group-inline display-9 mt-4">
+					<li> <a class="btn btn-round me-2 bg-facebook" href="#"><i class="fab fa-facebook-square"></i></a> </li>
+					<li> <a class="btn btn-round me-2 bg-instagram-gradient" href="#"><i class="fab fa-instagram-square"></i></a> </li>
+					<li> <a class="btn btn-round me-2 bg-twitter" href="#"><i class="fab fa-twitter-square"></i></a> </li>
+					<li> <a class="btn btn-round bg-linkedin" href="#"><i class="fab fa-linkedin"></i></a> </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- =======================
+Sidebar END -->
+	
+<!-- =======================
+Header START -->
+<header class="navbar-dark navbar-transparent navbar-sticky">
+	<!-- Logo Nav START -->
+	<nav class="navbar navbar-expand-lg">
+		<div class="container">
+			<!-- Logo START -->
+			<a class="navbar-brand" href="index.html">
+				<img class="navbar-brand-item" src="static/images/logo-light.svg" alt="logo">
+			</a>
+			<!-- Logo END -->
+
+			<!-- Responsive navbar toggler -->
+			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"> </span>
+			</button>
+
+			<!-- Main navbar START -->
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav navbar-nav-scroll mx-auto">
+					<!-- Nav item 1 Home -->
+					<li class="nav-item dropdown">
+						<a class="nav-link navbar-primary-soft-hover dropdown-toggle active" href="#" id="homeMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+						<ul class="dropdown-menu" aria-labelledby="homeMenu">
+							<li> <a class="dropdown-item" href="index.html">Home default</a></li>
+							<li> <a class="dropdown-item active" href="index-2.html">Home two</a></li>
+							<li> <a class="dropdown-item" href="index-3.html">Home three</a></li>
+						</ul>
+					</li>
+
+					<!-- Nav item 2 Pages -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+						<ul class="dropdown-menu" aria-labelledby="pagesMenu">
+							<li> <a class="dropdown-item" href="about.html">About</a></li>
+							<li> <a class="dropdown-item" href="services.html">Service</a></li>
+							<li> <a class="dropdown-item" href="contact-us.html">Contact</a></li>
+							<li> <a class="dropdown-item" href="error-404.html">Error 404</a></li>
+							<li> <a class="dropdown-item" href="maintenance-mode.html">Maintenance</a></li>
+							<li> <a class="dropdown-item" href="signup.html">Signup</a></li>
+							<li> <a class="dropdown-item" href="signin.html">Signin</a></li>
+							<li> <a class="dropdown-item" href="faq.html">Faq</a></li>
+							<li> <a class="dropdown-item" href="wishlist.html">Wishlist</a></li>
+						</ul>
+					</li>
+
+					<!-- Nav item 3 Listings -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="listings" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listings</a>
+						<ul class="dropdown-menu" aria-labelledby="listings">
+							<li> <a class="dropdown-item" href="property-list.html">Property list</a></li>
+							<li> <a class="dropdown-item" href="property-grid.html">Property grid</a></li>
+
+							<li class="dropdown-submenu dropend"> 
+								<a class="dropdown-item dropdown-toggle" href="#">Property detail</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="property-detail.html">Style 1</a> </li>
+									<li> <a class="dropdown-item" href="property-detail-2.html">Style 2</a> </li>
+								</ul>
+							</li>
+
+							<li class="dropdown-submenu dropend"> 
+								<a class="dropdown-item dropdown-toggle" href="#">Agent</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="agent-list.html">Agent list</a> </li>
+									<li> <a class="dropdown-item" href="agent-detail.html">Agent detail</a> </li>
+								</ul>
+							</li>
+
+							<li class="dropdown-submenu dropend"> 
+								<a class="dropdown-item dropdown-toggle" href="#">Agency</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="agency-list.html">Agency list</a> </li>
+									<li> <a class="dropdown-item" href="agency-detail.html">Agency detail</a> </li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+
+					<!-- Nav item 4 Dashboard -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dashboard" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dashboard</a>
+						<div class="dropdown-menu pb-3 pb-lg-0 rounded dropdown-menu-sm-end" data-bs-popper="none" aria-labelledby="dashboard">
+							<!-- Nav title -->
+							<div class="d-none d-sm-flex p-4 bg-light align-items-center mb-3">
+								<span class="me-3 mb-0 h2"><i class="far fa-chart-bar fa-fw"></i></span>
+								<div>
+									<h5 class="mb-0">Analyze full dashboard</h5>
+									<p class="mb-0">Points afraid but may end laughter raptures</p>
+								</div>
+							</div>
+
+							<div class="d-block d-sm-flex">
+								<ul class="list-unstyled w-100 pe-0 pe-lg-5">
+									<li> <a class="dropdown-item" href="agent-dashboard.html">Dashboard</a></li>
+									<li> <a class="dropdown-item" href="agent-add-property.html">Add new property</a></li>
+									<li> <a class="dropdown-item" href="agent-property.html">My property</a></li>
+									<li> <a class="dropdown-item" href="agent-favorite.html">My favorites</a></li>
+									<li> <a class="dropdown-item" href="agent-review.html">Review</a></li>
+								</ul>
+								<ul class="list-unstyled w-100 pe-0 pe-lg-5">
+									<li> <a class="dropdown-item" href="agent-profile.html">My profile</a></li>
+									<li> <a class="dropdown-item" href="agent-package.html">My package</a></li>
+									<li> <a class="dropdown-item" href="agent-message.html">Message</a></li>
+									<li> <a class="dropdown-item" href="agency-agent-list.html">Agent list</a></li>
+									<li> <a class="dropdown-item" href="add-new-agent.html">Add new agent</a></li>
+								</ul>
+							</div>
+							<!-- Join us --> 
+							<div class="row d-none d-lg-flex align-items-center justify-content-center text-center">
+								<div class="col-md-11 rounded position-relative mt-2">
+									<div class="card mb-4 overflow-hidden">
+										<!-- Image -->
+										<img class="card-img" src="static/images/bg/bg-05.jpg" alt="Card image">
+										<!-- Image overlay -->
+										<div class="bg-overlay"></div>
+										<div class="card-img-overlay bg-overlay-content"> 
+											<!-- Category -->
+											<div class="w-100 h-100 d-flex flex-column">
+												<div class="my-auto">
+													<!-- Title -->
+													<h3 class="card-title text-white">Do you want to join our team?</h3>
+													<!-- Button -->
+													<a href="#" class="btn btn-primary mb-0">Join us</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+								
+					<!-- Nav item 5 link-->
+					<li class="nav-item">	<a class="nav-link" href="contact-us.html">Contact</a></li>
+				</ul>
+			</div>
+			<!-- Main navbar END -->
+
+			<!-- Nav right START -->
+			
+			<div class="nav flex-nowrap align-items-center">
+				<!-- Nav Search Opener-->
+				{% if user.is_authenticated %}
+				<!-- Icon -->
+				<li class="list-inline-item me-2 me-sm-3"> <a href="#" class="text-white"><i class="far fa-envelope"></i></a></li>
+				<li class="list-inline-item me-2 me-sm-3">
+					<a href="#" class="text-white position-relative">
+						<i class="far fa-bell"></i>
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger p-1">
+							<span class="visually-hidden">unread messages</span>
+						</span>
+					</a>
+				</li>
+				<!-- Dropdown avatar -->
+			
+				<li class="list-inline-item">
+					<a href="#" class="btn-link" role="button" id="dropdownAvatar" data-bs-toggle="dropdown" aria-expanded="false">
+						{% if user.avatar %}
+						<img class="box-sm rounded-circle" src="{% static 'images/avatar/2.jpg' %}" alt="Profile picture">
+						{% else %}
+						<img class="box-sm rounded-circle" src="{% static 'images/user-profile-svgrepo-com.svg' %}"  alt="Profile picture">
+						{% endif %}
+					</a>
+					<!-- Dropdown list -->
+					<ul class="dropdown-menu min-w-auto" aria-labelledby="dropdownAvatar">
+						<li><a class="dropdown-item" href="{% url 'user_profile:profile' %}">Profile</a></li>
+						<li><a class="dropdown-item" href="#">Setting</a></li>
+						<li><a class="dropdown-item" href="#">My Wallet</a></li>
+						<li><a class="dropdown-item" href="{% url 'user_profile:logout' %}">Sign out</a></li>
+					</ul>
+				</li>
+			
+				{% else %}
+				<div class="nav ms-3">
+					<div class="nav-item">
+					  <a href="{% url 'user_profile:login' %}" class="nav-link pe-0"><i class="far fa-user me-2"></i>Вход/Регистрация</a>
+					</div>
+				</div>
+			
+				{% endif %}
+			<!-- Nav right END -->
+		</div>
+	</nav>
+	<!-- Logo Nav END -->
+</header>
+<!-- =======================
+Header END -->
+{% endblock Sidebar  %}
+
+{% block content %}
+
+
+{% endblock content %}
+<!-- =======================
+Footer START -->
+<footer class="position-relative bg-dark">
+	<div class="container">
+		<!-- Row START -->
+		<div class="row py-5 position-relative">
+
+			<!-- Widget 1 START -->
+			<div class="col-12 col-lg-3 mb-4 mb-lg-0">
+				<!-- logo -->
+				<div class="logo mb-2">
+					<img src="{% static 'images/logo-light.svg' %}" alt="">
+				</div>
+				<p class="mb-3">Thirty it matter enable become admire in giving. See resolved goodness felicity shy civility domestic had but. </p>
+				<!-- Contact detail -->
+				<p class="text-primary-hover mb-3"><a href="#"><i class="fas fa-phone-alt fa-fw me-2"></i>123-456-789</a></p>
+				<address class="text-primary-hover mb-3"><a href="#" class="d-flex"><i class="fas fa-map-marker-alt fa-fw me-2"></i>750 Sing Sing Rd, Horseheads, NY, 14845</a></address>
+				<p class="text-primary-hover mb-3"><a href="#"><i class="far fa-envelope fa-fw me-2"></i>example@email.com</a></p>
+				
+			</div>
+			<!-- Widget 1 END -->
+
+			<!-- Widget 2 START -->
+			<div class="col-12 col-lg-6 mb-4 mb-lg-0">
+				<div class="row">
+					<!-- Link block -->
+					<div class="col-6 col-md-4">
+						<h5 class="mb-2 mb-md-4 text-white">Quick links</h5>
+						<ul class="nav flex-column text-primary-hover">
+							<li class="nav-item"><a class="nav-link pt-0" href="#">What we do</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Contact us</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Company</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Easy steps</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Career</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Investment process</a></li>
+						</ul>
+					</div>
+									
+					<!-- Link block -->
+					<div class="col-6 col-md-4">
+						<h5 class="mb-2 mb-md-4 text-white">Useful links</h5>
+						<ul class="nav flex-column text-primary-hover">
+							<li class="nav-item"><a class="nav-link pt-0" href="#">Sign up</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Sign in</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Agent detail</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Customer Stories</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Privacy policy</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Terms of use</a></li>
+						</ul>
+					</div>
+
+					<!-- Link block -->
+					<div class="col-6 col-md-4">
+						<h5 class="mb-2 mb-md-4 text-white">Services</h5>
+						<ul class="nav flex-column text-primary-hover">
+							<li class="nav-item"><a class="nav-link pt-0" href="#">Wish list</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Location map</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Faq</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- Widget 2 END -->
+
+			<!-- Widget 3 START -->
+			<div class="col-12 col-lg-3">
+				<h5 class="mb-2 mb-md-4 text-white">Follow us</h5>
+					<!-- Social media -->
+					<ul class="list-inline mb-3">
+						<li class="list-inline-item">
+							<a href="#" class="fs-5 text-twitter"><i class="fab fa-fw fa-twitter"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a href="#" class="fs-5 text-instagram"><i class="fab fa-instagram"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a href="#" class="fs-5 text-facebook"><i class="fab fa-fw fa-facebook"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a href="#" class="fs-5 text-linkedin"><i class="fab fa-fw fa-linkedin-in"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a href="#" class="fs-5 text-dribbble"><i class="fas fa-basketball-ball"></i></a>
+						</li>
+					</ul>
+					<!-- Title -->
+
+					<div class="row g-2 mb-3">
+						<!-- Google play store button -->
+						<div class="col-6 col-sm-4 col-lg-6">
+							<a href="#">
+								<img src="{% static 'images/client/google-play.svg' %}" alt="">
+							</a>
+						</div>
+						<!-- App store button -->
+						<div class="col-6 col-sm-4 col-lg-6">
+							<a href="#">
+								<img src="{% static 'images/client/app-store.svg' %}" alt="app-store">
+							</a>
+						</div>
+					</div> <!-- Row END -->
+
+					<!-- Copy rights -->
+					<div class="mt-4">
+						©2021 <a href="#" class="text-reset btn-link" target="_blank">Realty</a>. All rights reserved
+				</div>
+			</div> <!-- Widget 3 END -->
+		</div>
+		<!-- Row END -->
+	</div>
+</footer>
+<!-- =======================
+Footer END -->
+
+<!-- Back to top -->
+<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+<!-- Back to top -->
+
+
+<!-- =======================
+JS libraries, plugins and custom scripts -->
+
+<!-- Bootstrap JS -->
+<script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Vendors -->
+<script src="{% static 'vendor/tiny-slider/tiny-slider.js' %}"></script>
+<script src="{% static 'vendor/purecounterjs/dist/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'vendor/sticky-js/sticky.min.js' %}"></script>
+<script src="{% static 'vendor/glightbox/js/glightbox.js' %}"></script>
+<script src="{% static 'vendor/choices/js/choices.min.js' %}"></script>
+<script src="{% static 'vendor/nouislider/nouislider.min.js' %}"></script>
+
+
+
+<!-- Template Functions -->
+<script src="{% static 'js/functions.js' %}"></script>
+
+</body>
+</html>
