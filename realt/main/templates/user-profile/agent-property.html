@@ -1,0 +1,243 @@
+{% extends "agent-profile.html" %}
+{% load static %}
+{% block title %}Мои объявления{% endblock %}
+
+
+
+{% block content %}
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+	
+	
+	
+			
+			<!-- Main content START -->
+			
+					<div class="col-12">
+						<!-- Page title -->
+						<div class="my-5">
+							<h3>My Properties</h3>
+							<hr>
+
+							
+						</div>
+
+					
+						<!-- Property list START -->
+						<div class="row">
+							<div class="col-md-12">
+
+								
+
+
+								<div class="bg-secondary-soft p-3 p-md-5 rounded">
+									<!-- Title -->
+									<div class="row d-none d-xxl-block">
+										<div class="col-12 align-middle py-3">
+											<div class="row border-bottom">
+												<div class="col-6">
+													<h5>Listing</h5>
+												</div>
+												<div class="col-6">
+													<div class="row">
+														<div class="col-4 align-middle text-body py-2">
+															<h5>Publish date</h5>
+														</div>
+														<div class="col-4 align-middle py-2">
+															<h5>Status</h5>
+														</div>
+														<div class="col-4 align-middle py-2">
+															<h5>Action</h5>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									{% for i in bb %}
+									<!-- Property -->
+									<div class="row">
+										<div class="col-12 align-middle py-4">
+											<div class="row">
+												<div class="col-xxl-6">
+													<div class="card bg-transparent">
+														<div class="row">
+															<!-- Image -->
+															<div class="col-xl-3">
+																<img class="rounded" src="{% static 'images/property/grid-list/02.jpg' %]" alt="">
+															</div>
+															<!-- Info -->
+															<div class="col-xl-9 pt-2 pt-xl-0">
+																<h6 class="mb-1">{{ i.title }}</h6>
+																<p class="mb-1 text-body">Chicago HQ Estica Cop. 8573 Livingston </p>
+																<span class="text-success">${{ i.price }}</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- Content -->
+												<div class="col-xxl-6 pt-2 pt-xxl-0">
+													<div class="row">
+														<!-- Date -->
+														<div class="col-md-4 align-middle text-body">
+															{{ i.created_at }}
+														</div>
+														<!-- Badge -->
+														<div class="col-md-4 align-middle pt-2 pt-md-0">
+															<div class="badge bg-danger-soft text-danger"><i class="fas fa-dollar-sign pe-1"></i>{{ i.rubric}}</div>
+														</div>
+														<!-- Buttons -->
+														<div class="col-md-4 align-middle pt-2 pt-md-0">
+															<a class="btn btn-sm btn-info-soft me-1 mb-1"><i class="fas fa-fw fa-eye"></i></a>
+															<a class="btn btn-sm btn-success-soft me-1 mb-1"><i class="far fa-fw fa-edit"></i></a>
+															<button class="btn btn-sm btn-danger-soft mb-1"><i class="far fa-fw fa-trash-alt"></i></button>
+														</div>
+													</div>
+												</div>
+											</div> <!-- Row END -->
+											
+										</div>
+									</div>
+									<hr> <!-- Divider -->
+									{% endfor %}
+									<!-- Property -->
+									<div class="row">
+										<div class="col-12 align-middle py-4">
+											<div class="row">
+												<div class="col-xxl-6">
+													<div class="card bg-transparent">
+														<div class="row">
+															<!-- Image -->
+															<div class="col-xl-3">
+																<img class="rounded" src="assets/images/property/grid-list/03.jpg" alt="">
+															</div>
+															<!-- Info -->
+															<div class="col-xl-9 pt-2 pt-xl-0">
+																<h6 class="mb-1">157485 Camino Codorniz</h6>
+																<p class="mb-1 text-body">Chicago HQ Estica Cop. 8573 Livingston </p>
+																<span class="text-success">$160,000</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- Content -->
+												<div class="col-xxl-6 pt-2 pt-xxl-0">
+													<!-- Date -->
+													<div class="row">
+														<div class="col-md-4 align-middle text-body">
+															08 July 2018
+														</div>
+														<!-- Badge -->
+														<div class="col-md-4 align-middle pt-2 pt-md-0">
+															<div class="badge bg-warning-soft text-warning"><i class="fas fa-rupee-sign pe-1"></i>For Rent</div>
+														</div>
+														<!-- Buttons -->
+														<div class="col-md-4 align-middle pt-2 pt-md-0">
+															<a class="btn btn-sm btn-info-soft me-1 mb-1"><i class="fas fa-fw fa-eye"></i></a>
+															<a class="btn btn-sm btn-success-soft me-1 mb-1"><i class="far fa-fw fa-edit"></i></a>
+															<button class="btn btn-sm btn-danger-soft mb-1"><i class="far fa-fw fa-trash-alt"></i></button>
+														</div>
+													</div>
+												</div>
+											</div> <!-- Row END -->
+										</div>
+									</div>
+									<hr> <!-- Divider -->
+
+									<!-- Property -->
+									<div class="row">
+										<div class="col-12 align-middle py-4">
+											<div class="row">
+												<div class="col-xxl-6">
+													<div class="card bg-transparent">
+														<div class="row">
+															<!-- Image -->
+															<div class="col-xl-3">
+																<img class="rounded" src="assets/images/property/grid-list/04.jpg" alt="">
+															</div>
+															<!-- Info -->
+															<div class="col-xl-9 pt-2 pt-xl-0">
+																<h6 class="mb-1">Store in Woodside, San Francisco</h6>
+																<p class="mb-1 text-body">Chicago HQ Estica Cop. 8573 Livingston </p>
+																<span class="text-success">$160,000</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- Content -->
+												<div class="col-xxl-6 pt-2 pt-xxl-0">
+													<!-- Date -->
+													<div class="row">
+														<div class="col-md-4 align-middle text-body">
+															08 July 2018
+														</div>
+														<!-- Badge -->
+														<div class="col-md-4 align-middle pt-2 pt-md-0">
+															<div class="badge bg-danger-soft text-danger"><i class="fas fa-rupee-sign pe-1"></i>For Sale</div>
+														</div>
+														<!-- Buttons -->
+														<div class="col-md-4 align-middle pt-2 pt-md-0">
+															<a class="btn btn-sm btn-info-soft me-1 mb-1"><i class="fas fa-fw fa-eye"></i></a>
+															<a class="btn btn-sm btn-success-soft me-1 mb-1"><i class="far fa-fw fa-edit"></i></a>
+															<button class="btn btn-sm btn-danger-soft mb-1"><i class="far fa-fw fa-trash-alt"></i></button>
+														</div>
+													</div>
+												</div>
+											</div> <!-- Row END -->
+										</div>
+									</div>
+									<hr> <!-- Divider -->
+
+									<!-- Property -->
+									<div class="row">
+										<div class="col-12 align-middle py-4">
+											<div class="row">
+												<div class="col-xxl-6">
+													<div class="card bg-transparent">
+														<div class="row">
+															<!-- Image -->
+															<div class="col-xl-3">
+																<img class="rounded" src="assets/images/property/grid-list/08.jpg" alt="">
+															</div>
+															<!-- Info -->
+															<div class="col-xl-9 pt-2 pt-xl-0">
+																<h6 class="mb-1">5620 morningstar Avenue</h6>
+																<p class="mb-1 text-body">Chicago HQ Estica Cop. 8573 Livingston </p>
+																<span class="text-success">$160,000</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- Content -->
+												<div class="col-xxl-6 pt-2 pt-xxl-0">
+													<div class="row">
+														<!-- Date -->
+														<div class="col-md-4 align-middle text-body">
+															08 July 2018
+														</div>
+														<!-- Badge -->
+														<div class="col-md-4 align-middle pt-2 pt-md-0">
+															<div class="badge bg-danger-soft text-danger"><i class="fas fa-rupee-sign pe-1"></i>For Sale</div>
+														</div>
+														<!-- Buttons -->
+														<div class="col-md-4 align-middle pt-2 pt-md-0">
+															<a class="btn btn-sm btn-info-soft me-1 mb-1"><i class="fas fa-fw fa-eye"></i></a>
+															<a class="btn btn-sm btn-success-soft me-1 mb-1"><i class="far fa-fw fa-edit"></i></a>
+															<button class="btn btn-sm btn-danger-soft mb-1"><i class="far fa-fw fa-trash-alt"></i></button>
+														</div>
+													</div>
+												</div>
+											</div> <!-- Row END -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Property list END -->
+					</div>
+				
+			<!-- Main content END -->
+		
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+{% endblock content %}

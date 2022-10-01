@@ -1,0 +1,38 @@
+{% extends "agent-profile.html" %}
+{% load static %}
+{% block title %}Мои объявления{% endblock %}
+
+
+{% block content %}
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+
+	
+	
+	
+	
+			
+	
+			<!-- Main content START -->
+			
+					<div class="col-12">
+						<!-- Page title -->
+						<div class="my-5">
+							<h3>Add Property</h3>
+							<hr>
+						</div>
+
+						<form action="." method = "POST">
+							{{ form.as_p }}
+							<p><input type="submit" value="Change"></p>
+							{% csrf_token %}
+						</form>
+					</div>
+				
+			<!-- Main content END -->
+		
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+{% endblock content %}

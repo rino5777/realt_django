@@ -31,7 +31,7 @@
 </head>
 
 <body>
-{% block Sidebar  %}
+
 
 	
 
@@ -39,8 +39,8 @@
 <div class="dashboard-topbar navbar-dark bg-dark px-3 px-sm-4 px-md-5">
 	<div class="d-flex justify-content-between align-items-center">
 		<!-- Logo -->
-		<a class="navbar-brand d-flex align-items-center py-2" href="index.html">
-			<img class="navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
+		<a class="navbar-brand d-flex align-items-center py-2" href="{% url 'main:main' %}">
+			<img class="navbar-brand-item" src="{% static 'images/logo-light.svg' %}" alt="logo">
 		</a>
 
 		<!-- Navbar right -->
@@ -93,16 +93,77 @@
 <!-- Navbar top END -->
 
 
------------------------------------------------------------------------------------
 
 
 
-{% endblock Sidebar  %}
-
-{% block content %}
 
 
-{% endblock content %}
+	<!-- Left sidebar START -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+		<div class="collapse navbar-collapse" id="dashboardNav">
+			<div class="dashboard-sidebar bg-light">
+				<div class="content mt-3">
+					<!-- Sidebar menu -->
+					<div class="list-group list-group-borderless p-3 p-md-4">
+						
+
+						<p class="text-body mt-3 mb-2">Manage Listing</p>
+							<a class="list-group-item hover-primary-soft" href="{% url 'user_profile:agent_add_property' %}"><i class="bi fa-fw bi-bookmark-plus-fill me-2"></i>Добавить объявление</a>
+							<a class="list-group-item hover-primary-soft" href="{% url 'user_profile:property_list' %}"><i class="fas fa-fw fa-home me-2"></i>Мои объявления</a> 
+							<a class="list-group-item hover-primary-soft" href="agent-favorite.html"><i class="fab fa-fw fa-gratipay me-2"></i>Избранное</a>
+
+						<p class="text-body mt-3 mb-2">Профиль</p>
+							<a class="list-group-item hover-primary-soft active" href="{% url 'user_profile:profile' %}"><i class="fas fa-fw fa-user-alt me-2"></i>Профиль</a>
+							<a class="list-group-item hover-primary-soft" href="agent-message.html"><i class="fas fa-fw fa-envelope me-2"></i>Сообшения</a>
+
+							<a class="list-group-item hover-primary-soft" href="{% url 'user_profile:change_password' %}"><i class="fas fa-fw fa-boxes me-2"></i>Изменить пароль</a>
+							<a class="list-group-item hover-primary-soft" href="{% url 'user_profile:logout' %}"><i class="fas fa-fw fa-sign-out-alt me-2"></i>Выход</a>
+
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>		
+	<!-- Left sidebar END -->
+
+
+
+			<!-- Main content START -->
+			<div class="main-content">
+				{% block content %}
+				<div class="row">
+					<div class="col-12">
+						<!-- Page title -->
+						<div class="my-5">
+							<h3>Профиль	</h3>
+							<hr>
+						</div>
+
+						
+
+						<form enctype="multipart/form-data" method="POST">
+							{{ form.username }}
+							{{ form.last_name }}
+							{{ form.email }}
+
+							
+							<p><input type="submit" value="Change"></p>
+							{% csrf_token %}
+						</form>
+
+					</div>
+				</div>
+				{% endblock content %}
+			</div>
+			<!-- Main content END -->
+			
+		</div>
+	</div>
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+
 <!-- =======================
 Footer START -->
 <footer class="position-relative bg-dark">
@@ -246,3 +307,33 @@ JS libraries, plugins and custom scripts -->
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

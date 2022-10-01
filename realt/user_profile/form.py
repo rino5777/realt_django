@@ -4,9 +4,83 @@ from django.core.exceptions import ValidationError
 from django.forms import inlineformset_factory
 from .models import User
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm, AuthenticationForm, UserChangeForm
-
+from advert.models import Ads, RealtType
 
 from django.views.generic.edit import FormMixin
+
+class AddAdvert(forms.ModelForm):
+
+    # image1 = forms.ImageField()
+    # image2 = forms.ImageField()
+    # image3 = forms.ImageField()
+    # image4 = forms.ImageField()
+    # image5 = forms.ImageField()
+    # image6 = forms.ImageField()
+
+    # description = forms.CharField(widget=forms.Textarea)
+    # # rubric = forms.ChoiceField()
+    # realt_type = forms.ModelChoiceField(queryset= RealtType.objects.all())
+    # overall_size = forms.DecimalField()
+    # residential_size = forms.DecimalField()
+    # kitchen_size = forms.DecimalField()
+    # number_of_rooms = forms.DecimalField()
+    # floor = forms.DecimalField()
+    
+    # number_of_building = forms.DecimalField()
+    
+    # building_freshness = forms.CharField()
+    
+    # title = forms.CharField()
+ 
+    # price = forms.FloatField()
+   
+    # contacts = forms.CharField()
+   
+    
+                             
+    # is_active = forms.BooleanField()
+                                   
+    # author = forms.ModelChoiceField(queryset= User.objects.all())
+
+
+
+
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # self.fields['image1'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'image1'})
+        # self.fields['image2'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'image1'})
+        # self.fields['image3'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'image1'})
+        # self.fields['image4'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'image1'})
+        # self.fields['image5'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'image1'})
+        # self.fields['image6'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'image1'})
+
+        self.fields['description'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'description', 'rows': 4,})
+        self.fields['rubric'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'rubric', })
+        self.fields['realt_type'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'realt_type', 'rows': 1,})
+        self.fields['realt_type'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'realt_type', 'rows': 1,})
+        self.fields['overall_size'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'overall_size', 'rows': 1,})
+
+        self.fields['residential_size'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'residential_size', 'rows': 1,})
+        self.fields['kitchen_size'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'kitchen_size', 'rows': 1,})
+        self.fields['number_of_rooms'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'number_of_rooms', 'rows': 1,})
+        self.fields['floor'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'floor', 'rows': 1,})
+        self.fields['number_of_building'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'number_of_building', 'rows': 1,})
+        self.fields['building_freshness'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'building_freshness', 'rows': 1,})
+        self.fields['title'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'title', 'rows': 1,})
+        self.fields['price'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'price', 'rows': 1,})
+        self.fields['contacts'].widget.attrs.update({'class' : 'form-control bg-light border-0','placeholder':'contacts', 'rows': 1,})
+        
+
+    class Meta:
+        model = Ads
+        fields = (  'description', 'rubric',\
+                     'realt_type', 'overall_size', 'residential_size', 'kitchen_size',  'number_of_rooms',\
+                      'floor', 'number_of_building', 'building_freshness', 'title', 'price', 'contacts',\
+                       'author',)
+
+
+    
 
 
 class ChangePass(FormMixin, PasswordChangeForm):
@@ -19,9 +93,9 @@ class ChangePass(FormMixin, PasswordChangeForm):
 
 
 class ChangeUserInfoForm(UserChangeForm):#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    username = forms.CharField( label='Никнейм')
-    last_name = forms.CharField( label='Никнейм')
-    email = forms.EmailField(required=True, label='Адрес электронной почты')
+    # username = forms.CharField( label='Никнейм')
+    # last_name = forms.CharField( label='Никнейм')
+    # email = forms.EmailField(required=True, label='Адрес электронной почты')
 
 
     def __init__(self, *args, **kwargs):   # игнорирование стандартных стилей 
@@ -31,6 +105,11 @@ class ChangeUserInfoForm(UserChangeForm):#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         self.fields['username'].widget.attrs.update({ 'class': 'form-control bg-light border-0', 'placeholder': 'Username' , 'rows': 1, })
         self.fields['last_name'].widget.attrs.update({ 'class': 'form-control bg-light border-0', 'placeholder': 'last_name' , 'rows': 1, })
 
+    class Meta:
+        model = User
+        fields = ('username', 'email',  'last_name' )
+
+    
 
    
 

@@ -10,49 +10,58 @@ class RealtType(models.Model):
     def __str__(self):
         return self.name
 
-    сlass Meta:
-        proxy = True
+    class Meta:
+        abstract = True
         verbose_name = 'Тип недвижимости'
         verbose_name_plural = 'Тип недвижимости'
 
 
-class Type(models.Model):
-    name = models.CharField(max_length=40, verbose_name='Категория')
+# class Type(models.Model):
+#     name = models.CharField(max_length=40, verbose_name='Категория')
 
-    def __str__(self):
-        return self.name
-
-    сlass Meta:
-        proxy = True
-        verbose_name = 'Категория'
-        verbose_name_plural = 'Категории'
+#     def __str__(self):
+#         return self.name
+    
+#     class Meta:
+#         abstract = True
+#         verbose_name = 'Категория'
+#         verbose_name_plural = 'Категории'
         
 
 class Ads(models.Model):
 
     #-----------building_freshness
+    OLD = 'НОВОЕ'
+    NEW = 'ВТОРИЧКА'
     BUILDING_FRESHNESS = [
         (NEW, 'новое здание'),
         (OLD, 'вторичная недвижимость'), ]
 
+    #-----------TRANSACTION_TYPE
+    BUY = 'ПОКУПКА'
+    SELL = 'ПРОДАЖА'
+    TRANSACTION_TYPE = [
+        (BUY, 'покупка'),
+        (SELL, 'продажа'), ]
+
     #------------------------------------------------------фото
-    image1 = models.ImageField(blank=True, upload_to= 'media/',
+    image1 = models.ImageField(blank=True, upload_to= 'media/', 
                               verbose_name='Изображение1')
-    image2 = models.ImageField(blank=True, upload_to= 'media/',
+    image2 = models.ImageField(blank=True, upload_to= 'media/',  
                               verbose_name='Изображение2')
-    image3 = models.ImageField(blank=True, upload_to= 'media/',
+    image3 = models.ImageField(blank=True, upload_to= 'media/',  
                               verbose_name='Изображение3')
-    image4 = models.ImageField(blank=True, upload_to= 'media/',
+    image4 = models.ImageField(blank=True, upload_to= 'media/',  
                               verbose_name='Изображение4')
-    image5 = models.ImageField(blank=True, upload_to= 'media/',
+    image5 = models.ImageField(blank=True, upload_to= 'media/',   
                               verbose_name='Изображение5')
-    image6 = models.ImageField(blank=True, upload_to= 'media/',
+    image6 = models.ImageField(blank=True, upload_to= 'media/',   
                               verbose_name='Изображение6')
 
     #------------------------------------------------------ описание
-    description = models.CharField(max_length=4000, verbose_name='Описание')
+    description = models.TextField(verbose_name='Описание')
     #------------------------------------------------------ тип
-    rubric = models.ForeignKey(Type, on_delete=models.PROTECT,
+    rubric = models.CharField(max_length=20, choices= TRANSACTION_TYPE , default= BUY,
                                           verbose_name='Категория ( покупка\продажа )')
     #------------------------------------------------------ тип недвижимости
     realt_type = models.ForeignKey(RealtType, on_delete=models.PROTECT,
@@ -70,13 +79,13 @@ class Ads(models.Model):
     #------------------------------------------------------ сколько этажей вообще
     number_of_building = models.DecimalField(max_digits=10, decimal_places=3)
     #------------------------------------------------------ вторичка\новстройка
-    building_freshness = models.CharField(max_length=2, choices=BUILDING_FRESHNESS,)
+    building_freshness = models.CharField(max_length=20, choices=BUILDING_FRESHNESS,)
     #------------------------------------------------------ Заголовок
     title = models.CharField(max_length=40, verbose_name='Заголовок')
     #------------------------------------------------------ цена
     price = models.FloatField(default=0, verbose_name='Цена')
     #------------------------------------------------------ Контакты
-    contacts = models.TextField(verbose_name='Контакты')
+    contacts = models.CharField(max_length=100, verbose_name='Контакты')
     #------------------------------------------------------ Автор объявления
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                verbose_name='Автор объявления')
@@ -102,3 +111,15 @@ class Ads(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+
+class RealtType(models.Model):
+    name = models.CharField(max_length=40, verbose_name='тип недвижимости')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        
+        verbose_name = 'Тип недвижимости'
+        verbose_name_plural = 'Тип недвижимости'
