@@ -39,10 +39,10 @@ class Ads(models.Model):
 
     #-----------TRANSACTION_TYPE
     BUY = 'ПОКУПКА'
-    SELL = 'ПРОДАЖА'
+    RENT = 'АРЕНДА'
     TRANSACTION_TYPE = [
         (BUY, 'покупка'),
-        (SELL, 'продажа'), ]
+        (RENT, 'аренда'), ]
 
     #------------------------------------------------------фото
     image1 = models.ImageField(blank=True, upload_to= 'media/', 
@@ -67,17 +67,17 @@ class Ads(models.Model):
     realt_type = models.ForeignKey(RealtType, on_delete=models.PROTECT,
                                           verbose_name='Рубрика')
      #------------------------------------------------------ размер общий
-    overall_size = models.DecimalField(max_digits=10000, decimal_places=5)
+    overall_size = models.DecimalField(max_digits=10000, decimal_places=1)
      #------------------------------------------------------ размер жилой
-    residential_size = models.DecimalField(max_digits=10000, decimal_places=5)
+    residential_size = models.DecimalField(max_digits=10000, decimal_places=1)
      #------------------------------------------------------ размер кухни
-    kitchen_size = models.DecimalField(max_digits=10000, decimal_places=5)
+    kitchen_size = models.DecimalField(max_digits=10000, decimal_places=1)
      #------------------------------------------------------ коллич комнат
-    number_of_rooms = models.DecimalField(max_digits=10, decimal_places=3)
+    number_of_rooms = models.DecimalField(max_digits=10, decimal_places=1)
      #------------------------------------------------------ этаж
-    floor = models.DecimalField(max_digits=10, decimal_places=3)
+    floor = models.DecimalField(max_digits=10, decimal_places=1)
     #------------------------------------------------------ сколько этажей вообще
-    number_of_building = models.DecimalField(max_digits=10, decimal_places=3)
+    number_of_building = models.DecimalField(max_digits=10, decimal_places=1)
     #------------------------------------------------------ вторичка\новстройка
     building_freshness = models.CharField(max_length=20, choices=BUILDING_FRESHNESS,)
     #------------------------------------------------------ Заголовок
@@ -106,8 +106,8 @@ class Ads(models.Model):
         verbose_name = 'Объявление'
         ordering = ['-created_at']
 
-    # def get_absolute_url(self):
-    #     return reverse('main:plug', args = [ self.id ] )
+    def get_absolute_url(self):
+        return reverse('advert:ads', args = [ self.id ] )
 
     def __str__(self):
         return str(self.title)

@@ -8,5 +8,6 @@ urlpatterns = [
     
     path('', Main.as_view() ,name='main'),
     
+    
 
 ]

@@ -806,12 +806,15 @@
                 <h2>Categories</h2>
                 <p>Insipidity the sufficient discretion imprudence resolution sir him decisively Proceed how any engaged visitor.</p>
             </div>
-    
+    {% for plug in plugs %}
+    {{ plug }}
+    {% endfor %}
             <div class="row">
                 <!-- Slider START -->
                 <div class="tiny-slider dots-creative arrow-round arrow-primary-soft">
                     <div class="tiny-slider-inner" data-autoplay="true" data-arrow="true" data-dots="true" data-items="4" data-items-md="2" data-items-xs="1">
                         <!-- Categorie item -->
+                        {% for category in types %}
                         <div class="col-md-3 position-relative">
                             <div class="card overflow-hidden">
                                 <img src="static/images/property/category/01.jpg" class="card-img" alt="...">
@@ -821,7 +824,7 @@
                                 <div class="card-img-overlay bg-overlay-content">
                                     <div class="w-100 h-100 d-flex flex-column">
                                         <div class="text-center my-auto">
-                                            <h5 class="text-white">Apartment</h5>
+                                            <h5 class="text-white">{{ category.name }}</h5>
                                             <a href="#" class="stretched-link"><span class="badge bg-orange">15</span></a>
                                         </div>
                                     </div>
@@ -829,77 +832,8 @@
                             </div>
                         </div>
                         <!-- Categorie item -->
-                        <div class="col-md-3 position-relative">
-                            <div class="card overflow-hidden">
-                                <!-- Image -->
-                                <img src="static/images/property/category/05.jpg" class="card-img" alt="...">
-                                <!-- Overlay -->
-                                <div class="bg-overlay opacity-7"></div>
-                                <!-- Content -->
-                                <div class="card-img-overlay bg-overlay-content">
-                                    <div class="w-100 h-100 d-flex flex-column">
-                                        <div class="text-center my-auto">
-                                            <h5 class="text-white">Office houses</h5>
-                                            <a href="#" class="stretched-link"><span class="badge bg-warning">40</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Categorie item -->
-                        <div class="col-md-3 position-relative">
-                            <div class="card overflow-hidden">
-                                <!-- Image -->
-                                <img src="static/images/property/category/04.jpg" class="card-img" alt="...">
-                                <!-- Overlay -->
-                                <div class="bg-overlay opacity-7"></div>
-                                <!-- Content -->
-                                <div class="card-img-overlay bg-overlay-content">
-                                    <div class="w-100 h-100 d-flex flex-column">
-                                        <div class="text-center my-auto">
-                                            <h5 class="text-white">Kids houses</h5>
-                                            <a href="#" class="stretched-link"><span class="badge bg-danger">56</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Categorie item -->
-                        <div class="col-md-3 position-relative">
-                            <div class="card overflow-hidden">
-                                <!-- Image -->
-                                <img src="static/images/property/category/02.jpg" class="card-img" alt="...">
-                                <!-- Overlay -->
-                                <div class="bg-overlay opacity-7"></div>
-                                <!-- Content -->
-                                <div class="card-img-overlay bg-overlay-content">
-                                    <div class="w-100 h-100 d-flex flex-column">
-                                        <div class="text-center my-auto">
-                                            <h5 class="text-white">Villas</h5>
-                                            <a href="#" class="stretched-link"><span class="badge bg-success">18</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Categorie item -->
-                        <div class="col-md-3 position-relative">
-                            <div class="card overflow-hidden">
-                                <!-- Image -->
-                                <img src="static/images/property/category/03.jpg" class="card-img" alt="...">
-                                <!-- Overlay -->
-                                <div class="bg-overlay opacity-7"></div>
-                                <!-- Content -->
-                                <div class="card-img-overlay bg-overlay-content">
-                                    <div class="w-100 h-100 d-flex flex-column">
-                                        <div class="text-center my-auto">
-                                            <h5 class="text-white">Duplex houses</h5>
-                                            <a href="#" class="stretched-link"><span class="badge bg-info">18</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
+                       
                     </div>
                 </div>
                 <!-- Slider END -->
@@ -928,6 +862,7 @@
     
             <div class="row mt-5">
                 <!-- Property START -->
+                {% for plug in plugs %}
                 <div class="col-sm-6 col-lg-4">
                     <div class="card mb-4">
                         <div class="position-relative overflow-hidden">
@@ -941,6 +876,7 @@
                                 </div>
                             </div>	
                         </div>
+                       
                         <!-- Card body START -->
                         <div class="card-body px-2 pt-3">
                             <!-- Badge and icon -->
@@ -953,7 +889,7 @@
                             </div>
                             <!-- Title -->
                             <h4 class="card-title mt-3">
-                                <a href="#">157485 Camino Codorniz</a>
+                                <a href="#">{{ plug.tittle }}</a>
                             </h4>
                             <!-- Info -->
                             <ul class="nav nav-divider align-items-center text-uppercase small mt-3">
@@ -967,7 +903,7 @@
                                     <i class="fas fa-user pe-1"></i> <span>5</span>
                                 </li>
                                 <li class="nav-item me-4">
-                                    <i class="fas fa-square pe-1"></i> <span>1800<sup class="text-lowercase">m2</sup></span>
+                                    <i class="fas fa-square pe-1"></i> <span>{{ plug.overall_size }}<sup class="text-lowercase">m2</sup></span>
                                 </li>
                             </ul>
                             <!-- Price -->
@@ -976,127 +912,16 @@
                                     <h6 class="text-decoration-line-through mb-0 text-muted">$150,000</h6>
                                     <h3 class="text-success mb-0">$120,000</h3>
                                 </div>
-                                <a class="btn btn-dark btn-sm" href="#">View details</a>
+                                <a class="btn btn-dark btn-sm" href="{{ plug.get_absolute_url }}">View details</a>
                             </div>
                         </div>
                         <!-- Card body END -->
+                       
                     </div>
                 </div>
                 <!-- Property END -->
-    
-                <!-- Property START -->
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card mb-4">
-                        <div class="position-relative overflow-hidden">
-                            <!-- Image -->
-                            <img class="card-img" src="static/images/property/grid-list/03.jpg" alt="Card image">
-                            <!-- Image overlay -->
-                            <div class="card-img-overlay">
-                                <div class="d-flex justify-content-between">
-                                    <a href="#" class="box-sm bg-primary text-light rounded-circle"><i class="fas fa-star"></i></a>
-                                    <div>
-                                        <a href="#" class="badge bg-dark text-light me-2"><i class="fas fa-video pe-2"></i><span>2</span></a>
-                                        <a href="#" class="badge bg-dark text-light"><i class="fas fa-camera pe-2"></i><span>2</span></a>
-                                    </div>
-                                </div>
-                            </div>	
-                        </div>	
-                        <!-- Card body START -->	
-                        <div class="card-body px-2 pt-3">
-                            <!-- Badge and icon -->
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    <a href="#" class="badge bg-primary-soft text-primary"><i class="fas fa-user-friends pe-1"></i>Family</a>
-                                    <a href="#" class="badge bg-warning-soft text-warning"><i class="fas fa-rupee-sign pe-1"></i>For Rent</a>
-                                </div>
-                                <a href="#"><i class="far fa-heart fa-fw text-dark ms-auto"></i></a>
-                            </div>
-                            <!-- Title -->
-                            <h4 class="card-title mt-3">
-                                <a href="#">Single House Near New York</a>
-                            </h4>
-                            <!-- Info -->
-                            <ul class="nav nav-divider align-items-center text-uppercase small mt-3">
-                                <li class="nav-item me-4">
-                                    <i class="fas fa-bed pe-1"></i> <span>5</span>
-                                </li>
-                                <li class="nav-item me-4">
-                                    <i class="fas fa-bath pe-1"></i> <span>3</span>
-                                </li>
-                                <li class="nav-item me-4">
-                                    <i class="fas fa-user pe-1"></i> <span>6</span>
-                                </li>
-                                <li class="nav-item me-4">
-                                    <i class="fas fa-square pe-1"></i> <span>2900<sup class="text-lowercase">m2</sup></span>
-                                </li>
-                            </ul>
-                            <!-- Price -->
-                            <div class="mt-3 d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h6 class="text-decoration-line-through mb-0 text-muted">$25,000</h6>
-                                    <h3 class="text-success mb-0">$22,000</h3>
-                                </div>
-                                <a class="btn btn-dark btn-sm" href="#">View details</a>
-                            </div>
-                        </div>
-                        <!-- Card body END -->
-                    </div>
-                </div>
-                <!-- Property END -->
-    
-                <!-- Property START -->
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card mb-4">
-                        <div class="position-relative overflow-hidden">
-                            <!-- Image -->
-                            <img class="card-img" src="static/images/property/grid-list/04.jpg" alt="Card image">
-                            <!-- Image overlay START-->
-                            <div class="card-img-overlay">
-                                <div class="text-end">
-                                    <a href="#" class="badge bg-dark text-light me-2"><i class="fas fa-video pe-2"></i><span>2</span></a>
-                                    <a href="#" class="badge bg-dark text-light"><i class="fas fa-camera pe-2"></i><span>2</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card body START -->
-                        <div class="card-body px-2 pt-3">
-                            <!-- Badge and icon -->
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    <a href="#" class="badge bg-primary-soft text-primary"><i class="fas fa-user-friends pe-1"></i>Family</a>
-                                    <a href="#" class="badge bg-danger-soft text-danger"><i class="fas fa-rupee-sign pe-1"></i>For Sale</a>
-                                </div>
-                                <a href="#"><i class="far fa-heart fa-fw text-dark ms-auto"></i></a>
-                            </div>
-                            <!-- Title -->
-                            <h4 class="card-title mt-3">
-                                <a href="#">Store in Woodside,  San Francisco</a>
-                            </h4>
-                            <!-- Info -->
-                            <ul class="nav nav-divider align-items-center text-uppercase small mt-3">
-                                <li class="nav-item me-4">
-                                    <i class="fas fa-bed pe-1"></i> <span>3</span>
-                                </li>
-                                <li class="nav-item me-4">
-                                    <i class="fas fa-bath pe-1"></i> <span>2</span>
-                                </li>
-                                <li class="nav-item me-4">
-                                    <i class="fas fa-user pe-1"></i> <span>5</span>
-                                </li>
-                                <li class="nav-item me-4">
-                                    <i class="fas fa-square pe-1"></i> <span>2000<sup class="text-lowercase">m2</sup></span>
-                                </li>
-                            </ul>
-                            <!-- Price -->
-                            <div class="mt-3 d-flex justify-content-between align-items-center">
-                                <h3 class="text-success">$160,000</h3>
-                                <a class="btn btn-dark btn-sm" href="#">View details</a>
-                            </div>
-                        </div>
-                        <!-- Card body END -->
-                    </div>
-                </div>
-                <!-- Property END -->
+                {% endfor %}
+                
             </div>
         </div>
     </section>
